@@ -1,0 +1,6 @@
+{
+  "name": "Academia Punhos Do Sul Kung Fu Shaolin",
+  "description": "Academia Punhos do Sul Kung Fu Shaolin. Leve os ensinamentos do Kung Fu para sua vida em nossa academia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
