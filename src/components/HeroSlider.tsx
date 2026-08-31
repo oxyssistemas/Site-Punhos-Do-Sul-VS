@@ -18,7 +18,7 @@ const SLIDES: Slide[] = [
   {
     id: 'slide-academia',
     tag: 'Tradição • Disciplina • Estilo de Vida',
-    title: 'Academia Punhos Do Sul',
+    title: 'Academia Punhos Do Sul - Kung Fu Shaolin',
     subtitle: 'Mais que uma Arte Marcial, um Estilo de Vida e Tradição Shaolin',
     buttonText: 'Conheça a Academia',
     target: '#juramentos',
@@ -32,7 +32,7 @@ const SLIDES: Slide[] = [
     subtitle: 'O poder, o espírito e a agilidade inspirados na observação da natureza',
     buttonText: 'Conheça os Estilos',
     target: '#estilos-animais',
-    imagePlaceholder: '/images/estilos/banner-estilos-animais.jpg',
+    imagePlaceholder: '/images/estilos/banner-estilos-animais2.jpg',
     alt: 'Os Estilos Animais do Kung Fu',
   },
   {

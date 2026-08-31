@@ -129,7 +129,7 @@ export const KungFuPage: React.FC<KungFuPageProps> = ({ navigate }) => {
                 <ImagePlaceholder
                   src="/images/subpages/kungfu-oquee.jpg"
                   alt="O que é Kung Fu - Prática Marcial Chinesa"
-                  aspectRatio="aspect-[4/3]"
+                  aspectRatio="aspect-[4/6]"
                   caption="Treinamento marcial, foco e domínio corporal"
                 />
               </motion.div>
@@ -175,7 +175,7 @@ export const KungFuPage: React.FC<KungFuPageProps> = ({ navigate }) => {
                   <ImagePlaceholder
                     src="/images/subpages/kungfu-historia.jpg"
                     alt="História do Kung Fu e Templo Shaolin"
-                    aspectRatio="aspect-[4/3]"
+                    aspectRatio="aspect-[4/9]"
                     caption="Origens no Mosteiro Shaolin e herança de Bodhidharma"
                   />
                 </motion.div>
