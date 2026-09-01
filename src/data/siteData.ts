@@ -23,7 +23,7 @@ export const MODALITIES_NAV = [
   { name: 'Tai Chi Chuan', href: '/tai-chi-chuan' },
   { name: 'Chi Kung', href: '/chi-kung' },
   { name: 'Defesa Pessoal', href: '/defesa-pessoal' },
-  { name: 'Sanda / Boxe Chinês', href: '/sanda' },
+  { name: 'Sanda', href: '/sanda' },
   { name: 'Wushu', href: '/wushu' },
   { name: 'Dança Do Leão', href: '/dança-do-leão' },
   { name: 'Meditação', href: '/medtação' },
@@ -78,7 +78,7 @@ export const HOME_CARDS: ModalityCard[] = [
   },
   {
     id: 'sanda',
-    title: 'Sanda/Sanshou/ Boxe Chines',
+    title: 'Sanda/Sanshou',
     description: 'Sanda que em mandarim significa "luta livre", também conhecido como sanshou, do mandarim "mãos livres". É a técnica existente nas artes marciais chinesas para...',
     href: '/sanda',
     imagePlaceholder: '/images/modalidades/sanda.jpg',
@@ -320,7 +320,7 @@ export const SUBPAGES_DATA: Record<string, SubpageContent> = {
   },
   'sanda': {
     id: 'sanda',
-    title: 'Sanda / Sanshou / Boxe Chinês',
+    title: 'Sanda / Sanshou',
     heroImagePlaceholder: '/images/subpages/sanda-hero.jpg',
     metaDescription: 'Sanda que em mandarim significa luta livre, também conhecido como sanshou. É a técnica de combate das artes marciais chinesas.',
     sections: [
