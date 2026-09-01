@@ -494,7 +494,7 @@ export const SandaPage: React.FC<SandaPageProps> = ({ navigate }) => {
             className="inline-flex items-center gap-2 bg-gradient-to-r from-red-700 to-red-600 hover:from-red-600 hover:to-red-500 text-white font-bold text-xs sm:text-sm uppercase tracking-widest px-6 py-3.5 rounded border border-amber-500/60 shadow-lg shadow-red-950 transition-all active:scale-98"
           >
             <MessageCircle className="w-4 h-4 text-emerald-300" />
-            <span>Agendar Aula de Sanda (Boxe Chinês)</span>
+            <span>Agendar Aula de Sanda</span>
           </a>
         </motion.div>
       </div>
