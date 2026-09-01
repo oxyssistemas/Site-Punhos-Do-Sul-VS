@@ -33,7 +33,7 @@ const SLIDES: Slide[] = [
     subtitle: 'O poder, o espírito e a agilidade inspirados na observação da natureza',
     buttonText: 'Conheça os Estilos',
     target: '#estilos-animais',
-    imagePlaceholder: '/images/estilos/banner-estilos-animais2.jpg',
+    imagePlaceholder: '/images/estilos/banner-estilos-animais.jpg',
     alt: 'Os Estilos Animais do Kung Fu',
   },
   {
@@ -191,16 +191,6 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ navigate }) => {
           </div>
         </motion.div>
       </AnimatePresence>
-
-      {/* Navigation Arrows */}
-      <button
-        id="hero-slider-next"
-        onClick={nextSlide}
-        className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-neutral-950/75 hover:bg-red-900/90 border border-amber-500/40 text-amber-300 hover:text-white transition-all shadow-xl hover:scale-110 active:scale-95 backdrop-blur-sm cursor-pointer"
-        aria-label="Próximo slide"
-      >
-        <ChevronRight className="w-6 h-6" />
-      </button>
 
       {/* Slide Indicators & Auto-progress bar */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-3">
