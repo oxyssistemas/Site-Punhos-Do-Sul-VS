@@ -101,7 +101,7 @@ export const SandaPage: React.FC<SandaPageProps> = ({ navigate }) => {
         <div className="absolute inset-0 opacity-20">
           <ImagePlaceholder
             src="/images/subpages/sanda-hero.jpg"
-            alt="Sanda Boxe Chinês e Sanshou"
+            alt="Sanda e Sanshou"
             className="w-full h-full object-cover"
             aspectRatio="h-full w-full"
           />
@@ -187,7 +187,7 @@ export const SandaPage: React.FC<SandaPageProps> = ({ navigate }) => {
             {/* Texto à Esquerda */}
             <div className="lg:col-span-7 space-y-5 text-gray-200 text-base sm:text-lg leading-relaxed font-normal">
               <p className="border-l-2 border-red-500 pl-4 text-gray-100 font-medium text-3d-white">
-                Sǎndǎ (散打; literalmente "luta livre") ou Sànshǒu (散手; literalmente "mãos livres"), também conhecido como Boxe Chinês ou ainda Kickboxing Chinês, é uma forma chinesa moderna de combate corpo-a-corpo, um sistema de auto-defesa, e um esporte de combate.
+                Sǎndǎ (散打; literalmente "luta livre") ou Sànshǒu (散手; literalmente "mãos livres"), é uma forma chinesa moderna de combate corpo-a-corpo, um sistema de auto-defesa, e um esporte de combate.
               </p>
               <p className="border-l-2 border-amber-500 pl-4 text-amber-100 font-medium">
                 O Sǎndǎ possui semelhanças com o Kickboxing, mas tem como característica principal as quedas e arremessos ao solo. É um dos componentes dos diversos estilos de Kung Fu. Os treinamentos cardio-vasculares e de resistência muscular nessa modalidade são bastante intensos, às vezes até extremos, possibilitando aos competidores um preparo físico invejável.
