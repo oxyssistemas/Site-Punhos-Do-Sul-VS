@@ -12,13 +12,14 @@ interface Slide {
   target: string;
   imagePlaceholder: string;
   alt: string;
+  nowrap?: boolean;
 }
 
 const SLIDES: Slide[] = [
   {
     id: 'slide-academia',
     tag: 'Tradição • Disciplina • Estilo de Vida',
-    title: 'Academia Punhos Do Sul - Kung Fu Shaolin',
+    title: 'Academia Punhos Do Sul\nKung Fu Shaolin',
     subtitle: 'Mais que uma Arte Marcial, um Estilo de Vida e Tradição Shaolin',
     buttonText: 'Conheça a Academia',
     target: '#juramentos',
@@ -32,7 +33,7 @@ const SLIDES: Slide[] = [
     subtitle: 'O poder, o espírito e a agilidade inspirados na observação da natureza',
     buttonText: 'Conheça os Estilos',
     target: '#estilos-animais',
-    imagePlaceholder: '/images/estilos/banner-estilos-animais2.jpg',
+    imagePlaceholder: '/images/estilos/banner-estilos-animais.jpg',
     alt: 'Os Estilos Animais do Kung Fu',
   },
   {
@@ -44,6 +45,7 @@ const SLIDES: Slide[] = [
     target: '#armas',
     imagePlaceholder: '/images/armas/banner-armas-kungfu.jpg',
     alt: 'Armas Tradicionais do Kung Fu',
+    nowrap: true,
   },
   {
     id: 'slide-modalidades',
@@ -134,18 +136,18 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ navigate }) => {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)]" />
 
           {/* Slide Content with Staggered Entrance Animations */}
-          <div className="relative z-20 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center">
-            <div className="max-w-4xl space-y-6">
+          <div className="relative z-20 h-full w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center">
+            <div className="w-full max-w-4xl mx-auto flex flex-col items-center justify-center text-center space-y-5 sm:space-y-6">
               
               {/* Badge Tag */}
               <motion.div
                 initial={{ opacity: 0, y: -25, scale: 0.9 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.15, type: 'spring', stiffness: 120 }}
-                className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-[0.25em] text-amber-400 uppercase py-1.5 px-4 rounded-full bg-red-950/80 border border-amber-500/50 shadow-lg backdrop-blur-sm"
+                className="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold tracking-[0.25em] text-amber-400 uppercase py-1.5 px-4 rounded-full bg-red-950/80 border border-amber-500/50 shadow-lg backdrop-blur-sm mx-auto"
               >
-                <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-spin" style={{ animationDuration: '6s' }} />
-                <span>{activeSlide.tag}</span>
+                <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-spin shrink-0" style={{ animationDuration: '6s' }} />
+                <span className="text-center">{activeSlide.tag}</span>
               </motion.div>
 
               {/* Main 3D Title */}
@@ -153,7 +155,9 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ navigate }) => {
                 initial={{ opacity: 0, y: 35, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-wider font-chinese-dragon uppercase text-3d-red drop-shadow-2xl"
+                className={`w-full text-center text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-wider font-chinese-dragon uppercase text-3d-red drop-shadow-2xl whitespace-pre-line leading-tight mx-auto ${
+                  activeSlide.nowrap ? 'whitespace-nowrap' : ''
+                }`}
               >
                 {activeSlide.title}
               </motion.h1>
@@ -163,7 +167,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ navigate }) => {
                 initial={{ opacity: 0, y: 25 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
-                className="text-lg sm:text-2xl font-bold tracking-wider max-w-3xl mx-auto font-chinese-dragon text-3d-gold subtitle-shadow leading-relaxed"
+                className="text-base sm:text-xl lg:text-2xl font-bold tracking-wider max-w-3xl mx-auto font-chinese-dragon text-3d-gold subtitle-shadow leading-relaxed text-center"
               >
                 {activeSlide.subtitle}
               </motion.p>
@@ -173,7 +177,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ navigate }) => {
                 initial={{ opacity: 0, y: 20, scale: 0.9 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.55, type: 'spring', stiffness: 150 }}
-                className="pt-4"
+                className="pt-2 sm:pt-4 flex justify-center w-full"
               >
                 <button
                   id={`hero-slide-btn-${activeSlide.id}`}
