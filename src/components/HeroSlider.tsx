@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import { ImagePlaceholder } from './ImagePlaceholder';
 
 interface Slide {
@@ -74,16 +74,6 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ navigate }) => {
     }, 6500);
     return () => clearInterval(interval);
   }, [currentSlide]);
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? SLIDES.length - 1 : prev - 1));
-    setKeyCounter((k) => k + 1);
-  };
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
-    setKeyCounter((k) => k + 1);
-  };
 
   const handleSlideButtonClick = (slide: Slide) => {
     if (slide.target.startsWith('#')) {
@@ -203,15 +193,6 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ navigate }) => {
       </AnimatePresence>
 
       {/* Navigation Arrows */}
-      <button
-        id="hero-slider-prev"
-        onClick={prevSlide}
-        className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-neutral-950/75 hover:bg-red-900/90 border border-amber-500/40 text-amber-300 hover:text-white transition-all shadow-xl hover:scale-110 active:scale-95 backdrop-blur-sm cursor-pointer"
-        aria-label="Slide anterior"
-      >
-        <ChevronLeft className="w-6 h-6" />
-      </button>
-
       <button
         id="hero-slider-next"
         onClick={nextSlide}
