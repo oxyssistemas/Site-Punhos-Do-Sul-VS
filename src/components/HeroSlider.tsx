@@ -33,7 +33,7 @@ const SLIDES: Slide[] = [
     subtitle: 'O poder, o espírito e a agilidade inspirados na observação da natureza',
     buttonText: 'Conheça os Estilos',
     target: '#estilos-animais',
-    imagePlaceholder: '/images/estilos/banner-estilos-animais.jpg',
+    imagePlaceholder: '/images/estilos/banner-estilos-animais2.jpg',
     alt: 'Os Estilos Animais do Kung Fu',
   },
   {

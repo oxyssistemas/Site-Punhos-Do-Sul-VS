@@ -190,10 +190,10 @@ export const WEAPONS_ITEMS: WeaponItem[] = [
   { id: 'punhal-dardo-corda', name: 'Sheng Biao (Dardo de Corda)', category: 'Arma Flexível Oculta', imagePlaceholder: '/images/armas/dardo-corda.png' },
   { id: 'leque-aco', name: 'Tie Shan (Leque Marcial de Aço)', category: 'Arma Oculta Elegante', imagePlaceholder: '/images/armas/leque-aco.png' },
   { id: 'espada-gancho', name: 'Shuang Gou (Espadas de Gancho Duplas)', category: 'Arma Especial Dupla', imagePlaceholder: '/images/armas/espada-gancho.png' },
-  { id: 'escudo-espada', name: 'Teng Pai & Dao (Escudo e Sabre)', category: 'Armamento de Infantaria', imagePlaceholder: '/images/armas/escudo-sabre.png' },
+  { id: 'aros', name: 'Facas Rabo De Peixe (LÙJIǍODĀO)', category: 'Armamento exotico', imagePlaceholder: '/images/armas/aros.png' },
   { id: 'tridente', name: 'San Cha (Tridente Marcial)', category: 'Arma Longa Pesada', imagePlaceholder: '/images/armas/tridente.png' },
   { id: 'martelo-meteoro', name: 'Liu Xing Chui (Martelo Meteoro)', category: 'Arma Flexível de Impacto', imagePlaceholder: '/images/armas/martelo-meteoro.png' },
-  { id: 'bengala-marcial', name: 'Guai Zhang (Bengala do Monge)', category: 'Arma Cotidiana de Defesa', imagePlaceholder: '/images/armas/bengala-monge.png' },
+  { id: 'Dang', name: 'Dang', category: 'Especie de Tridente', imagePlaceholder: '/images/armas/dang.png' },
 ];
 
 export const SUBPAGES_DATA: Record<string, SubpageContent> = {
