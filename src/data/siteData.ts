@@ -61,7 +61,7 @@ export const HOME_CARDS: ModalityCard[] = [
     title: 'kung fu',
     description: 'Kung fu é uma arte marcial que nasceu na China. A tradução literal do mandarim significa “trabalhar duro” ou “tempo e habilidade”. Para os chineses, a expressão..',
     href: '/kung-fu-1',
-    imagePlaceholder: '/images/modalidades/kung-fu.jpg',
+    imagePlaceholder: '/images/modalidades/kung-fu2.jpg',
   },
   {
     id: 'defesa-pessoal',
