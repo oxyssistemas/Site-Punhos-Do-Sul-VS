@@ -51,7 +51,7 @@ const SLIDES: Slide[] = [
     id: 'slide-modalidades',
     tag: 'Treinamento Completo • Mente e Corpo',
     title: 'Nossas Modalidades',
-    subtitle: 'Kung Fu, Tai Chi Chuan, Chi Kung, Sanda, Defesa Pessoal e Dança do Leão',
+    subtitle: 'Kung Fu, Boxe Chinês, Tai Chi Chuan, Sanda, Defesa Pessoal e Dança do Leão',
     buttonText: 'Ver Modalidades',
     target: '#modalidades',
     imagePlaceholder: '/images/modalidades/kung-fu.jpg',

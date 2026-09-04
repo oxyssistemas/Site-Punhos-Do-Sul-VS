@@ -7,7 +7,7 @@ import { Shield, Sparkles, ZoomIn, X, BookOpen, Award, Image as ImageIcon, Scrol
  * Adicione o caminho da sua imagem abaixo (ex: '/images/juramentos-kung-fu.jpg' ou '/meu-pergaminho.png').
  * Quando vazio (''), exibe o espaço reservado decorativo tradicional para você personalizar.
  */
-export const PERGAMINHO_IMAGE_URL = 'images/juramento.jpg';
+export const PERGAMINHO_IMAGE_URL = '';
 
 const JURAMENTOS_LIST = [
   { id: 1, text: 'Eu me Comprometo a Treinar Corpo e Espírito para a Paz' },

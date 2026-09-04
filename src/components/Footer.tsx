@@ -8,6 +8,14 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ navigate }) => {
   const handleNav = (path: string) => {
+    if (path.startsWith('#') || path.startsWith('/#')) {
+      const targetId = path.replace(/^\/?#/, '');
+      const el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+    }
     navigate(path);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };

@@ -129,7 +129,7 @@ export const SandaPage: React.FC<SandaPageProps> = ({ navigate }) => {
             <ChevronRight className="w-3.5 h-3.5 text-red-500" />
             <span className="text-gray-300">Modalidades</span>
             <ChevronRight className="w-3.5 h-3.5 text-red-500" />
-            <span className="text-amber-400">Sanda (Boxe Chinês)</span>
+            <span className="text-amber-400">Sanda</span>
           </motion.div>
 
           <motion.div
@@ -140,7 +140,7 @@ export const SandaPage: React.FC<SandaPageProps> = ({ navigate }) => {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/60 border border-red-800/40 text-amber-400 text-xs font-semibold uppercase tracking-widest">
               <Flame className="w-3.5 h-3.5 text-amber-400" />
-              <span>Boxe Chinês & Kickboxing Tradicional ( 散打 / 散手 )</span>
+              <span>Combate & Kickboxing Tradicional ( 散打 / 散手 )</span>
             </div>
 
             {/* Title with Shojumaru Font */}
@@ -187,7 +187,7 @@ export const SandaPage: React.FC<SandaPageProps> = ({ navigate }) => {
             {/* Texto à Esquerda */}
             <div className="lg:col-span-7 space-y-5 text-gray-200 text-base sm:text-lg leading-relaxed font-normal">
               <p className="border-l-2 border-red-500 pl-4 text-gray-100 font-medium text-3d-white">
-                Sǎndǎ (散打; literalmente "luta livre") ou Sànshǒu (散手; literalmente "mãos livres"), é uma forma chinesa moderna de combate corpo-a-corpo, um sistema de auto-defesa, e um esporte de combate.
+                Sǎndǎ (散打; literalmente "luta livre") ou Sànshǒu (散手; literalmente "mãos livres"), também conhecido como Boxe Chinês ou ainda Kickboxing Chinês, é uma forma chinesa moderna de combate corpo-a-corpo, um sistema de auto-defesa, e um esporte de combate.
               </p>
               <p className="border-l-2 border-amber-500 pl-4 text-amber-100 font-medium">
                 O Sǎndǎ possui semelhanças com o Kickboxing, mas tem como característica principal as quedas e arremessos ao solo. É um dos componentes dos diversos estilos de Kung Fu. Os treinamentos cardio-vasculares e de resistência muscular nessa modalidade são bastante intensos, às vezes até extremos, possibilitando aos competidores um preparo físico invejável.
@@ -204,7 +204,7 @@ export const SandaPage: React.FC<SandaPageProps> = ({ navigate }) => {
               >
                 <ImagePlaceholder
                   src="/images/subpages/sanda-intro.jpg"
-                  alt="Lutadores de Sanda Boxe Chinês em Ação"
+                  alt="Lutadores de Sanda em Ação"
                   aspectRatio="aspect-[4/3]"
                   caption="Combinação explosiva de trocação com socos, chutes e projeções ao solo"
                 />

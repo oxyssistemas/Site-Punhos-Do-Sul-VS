@@ -34,15 +34,16 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
   const handleLinkClick = (href: string) => {
     setIsDropdownOpen(false);
     setIsMobileMenuOpen(false);
-    if (href.startsWith('#')) {
+    if (href.startsWith('#') || href.startsWith('/#')) {
+      const targetId = href.replace(/^\/?#/, '');
       if (currentPath !== '/') {
         navigate('/');
         setTimeout(() => {
-          const el = document.getElementById(href.substring(1));
+          const el = document.getElementById(targetId);
           if (el) el.scrollIntoView({ behavior: 'smooth' });
         }, 150);
       } else {
-        const el = document.getElementById(href.substring(1));
+        const el = document.getElementById(targetId);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
@@ -79,15 +80,15 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
 
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 sm:h-24">
+        <div className="flex items-center justify-between h-20 sm:h-24 md:h-28">
           {/* Logo Area */}
           <button
             id="brand-home-link"
             onClick={() => handleLinkClick('/')}
-            className="flex items-center focus:outline-none group py-1 shrink-0"
+            className="flex flex-col items-center justify-center focus:outline-none group py-1 shrink-0 cursor-pointer"
             title="Início"
           >
-            <div className="relative h-14 sm:h-16 md:h-20 w-auto min-w-[50px] max-w-[200px] flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
+            <div className="relative h-12 sm:h-14 md:h-16 w-auto min-w-[50px] max-w-[200px] flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
               <img
                 src={SITE_INFO.logoPlaceholder}
                 alt="Logo da Academia"
@@ -97,18 +98,36 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
                   const fallback = target.nextElementSibling as HTMLElement;
                   if (fallback) fallback.style.display = 'flex';
                 }}
-                className="h-full w-auto max-h-16 sm:max-h-20 object-contain drop-shadow-lg"
+                className="h-full w-auto max-h-12 sm:max-h-14 md:max-h-16 object-contain drop-shadow-lg"
               />
               
               {/* Visual Fallback */}
               <div
                 style={{ display: 'none' }}
-                className="h-14 w-14 sm:h-16 sm:w-16 rounded-full bg-gradient-to-br from-red-600 via-red-900 to-neutral-950 border-2 border-amber-400/90 items-center justify-center p-2 shadow-xl shadow-red-950/80 group-hover:border-amber-300 transition-all flex"
+                className="h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-gradient-to-br from-red-600 via-red-900 to-neutral-950 border-2 border-amber-400/90 items-center justify-center p-2 shadow-xl shadow-red-950/80 group-hover:border-amber-300 transition-all flex"
               >
                 <span className="text-amber-400 font-bold text-2xl sm:text-3xl font-chinese select-none">武</span>
               </div>
             </div>
+
+            {/* No modo PC abaixo da logo */}
+            <span className="hidden md:block text-xs lg:text-sm font-bold font-chinese tracking-[0.2em] uppercase text-amber-400 group-hover:text-amber-300 transition-colors drop-shadow mt-1">
+              Sifu Gomes
+            </span>
           </button>
+
+          {/* No modo Celular: no meio do cabeçalho */}
+          <div className="md:hidden flex-1 flex items-center justify-center text-center px-2">
+            <button
+              id="mobile-header-sifu-gomes"
+              onClick={() => handleLinkClick('/')}
+              className="inline-flex items-center gap-1.5 focus:outline-none group"
+            >
+              <span className="text-sm sm:text-base font-bold font-chinese tracking-[0.18em] uppercase text-amber-400 group-hover:text-amber-300 drop-shadow-md transition-colors">
+                Sifu Gomes
+              </span>
+            </button>
+          </div>
 
           {/* Desktop Navigation with Chinese Takeaway Font */}
           <nav className="hidden lg:flex items-center gap-5 xl:gap-7 font-chinese">
@@ -161,7 +180,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
                   <div className="bg-neutral-950/98 backdrop-blur-md border border-red-900/70 rounded-xl shadow-2xl py-2 max-h-[75vh] overflow-y-auto ring-1 ring-amber-500/20">
                     <div className="px-4 py-2 text-xs font-bold tracking-widest text-amber-500 uppercase border-b border-red-900/40 mb-1 font-chinese flex items-center justify-between">
                       <span>Modalidades</span>
-                      <span className="text-[10px] text-gray-400 font-sans">9 Estilos</span>
+                      <span className="text-[10px] text-gray-400 font-sans">{MODALITIES_NAV.length} Estilos</span>
                     </div>
                     {MODALITIES_NAV.map((item) => (
                       <button

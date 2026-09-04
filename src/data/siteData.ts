@@ -19,6 +19,7 @@ export const SITE_INFO = {
 };
 
 export const MODALITIES_NAV = [
+  { name: 'Boxe Chinês', href: '/#card-boxe-chines' },
   { name: 'Kung Fu', href: '/kung-fu-1' },
   { name: 'Tai Chi Chuan', href: '/tai-chi-chuan' },
   { name: 'Chi Kung', href: '/chi-kung' },
@@ -49,11 +50,18 @@ export const MASTERS_NAV_ITEMS = [
 
 export const HOME_CARDS: ModalityCard[] = [
   {
+    id: 'boxe-chines',
+    title: 'Boxe Chinês',
+    description: 'O Boxe Chinês é uma modalidade dinâmica de combate que reúne socos potentes, chutes velozes, defesas atentas e projeções, proporcionando excelente queima calórica, reflexos rápidos e alto condicionamento físico.',
+    href: '#boxe-chines',
+    imagePlaceholder: '/images/modalidades/boxe-chines.jpg',
+  },
+  {
     id: 'kung-fu',
     title: 'kung fu',
     description: 'Kung fu é uma arte marcial que nasceu na China. A tradução literal do mandarim significa “trabalhar duro” ou “tempo e habilidade”. Para os chineses, a expressão..',
     href: '/kung-fu-1',
-    imagePlaceholder: '/images/modalidades/kung-fu2.jpg',
+    imagePlaceholder: '/images/modalidades/kung-fu.jpg',
   },
   {
     id: 'defesa-pessoal',
@@ -78,7 +86,7 @@ export const HOME_CARDS: ModalityCard[] = [
   },
   {
     id: 'sanda',
-    title: 'Sanda/Sanshou',
+    title: 'Sanda',
     description: 'Sanda que em mandarim significa "luta livre", também conhecido como sanshou, do mandarim "mãos livres". É a técnica existente nas artes marciais chinesas para...',
     href: '/sanda',
     imagePlaceholder: '/images/modalidades/sanda.jpg',
@@ -182,10 +190,10 @@ export const WEAPONS_ITEMS: WeaponItem[] = [
   { id: 'punhal-dardo-corda', name: 'Sheng Biao (Dardo de Corda)', category: 'Arma Flexível Oculta', imagePlaceholder: '/images/armas/dardo-corda.png' },
   { id: 'leque-aco', name: 'Tie Shan (Leque Marcial de Aço)', category: 'Arma Oculta Elegante', imagePlaceholder: '/images/armas/leque-aco.png' },
   { id: 'espada-gancho', name: 'Shuang Gou (Espadas de Gancho Duplas)', category: 'Arma Especial Dupla', imagePlaceholder: '/images/armas/espada-gancho.png' },
-  { id: 'Dang', name: 'Dang', category: 'Arma Exotica', imagePlaceholder: '/images/armas/dang.png' },
+  { id: 'escudo-espada', name: 'Teng Pai & Dao (Escudo e Sabre)', category: 'Armamento de Infantaria', imagePlaceholder: '/images/armas/escudo-sabre.png' },
   { id: 'tridente', name: 'San Cha (Tridente Marcial)', category: 'Arma Longa Pesada', imagePlaceholder: '/images/armas/tridente.png' },
   { id: 'martelo-meteoro', name: 'Liu Xing Chui (Martelo Meteoro)', category: 'Arma Flexível de Impacto', imagePlaceholder: '/images/armas/martelo-meteoro.png' },
-  { id: 'aros-metalicos', name: 'Lu Jiao Dao(Facas Lua Crescente)', category: ' Consistem em duas lâminas de aço em formato de meia-lua entrecruzadas, criando quatro pontas ou garras', imagePlaceholder: '/images/armas/aros.png' },
+  { id: 'bengala-marcial', name: 'Guai Zhang (Bengala do Monge)', category: 'Arma Cotidiana de Defesa', imagePlaceholder: '/images/armas/bengala-monge.png' },
 ];
 
 export const SUBPAGES_DATA: Record<string, SubpageContent> = {
@@ -320,7 +328,7 @@ export const SUBPAGES_DATA: Record<string, SubpageContent> = {
   },
   'sanda': {
     id: 'sanda',
-    title: 'Sanda / Sanshou',
+    title: 'Sanda',
     heroImagePlaceholder: '/images/subpages/sanda-hero.jpg',
     metaDescription: 'Sanda que em mandarim significa luta livre, também conhecido como sanshou. É a técnica de combate das artes marciais chinesas.',
     sections: [

@@ -76,8 +76,9 @@ export function App() {
         return <DefesaPessoalPage navigate={navigate} />;
       case 'sanda':
       case 'sanshou':
-      case 'boxe-chines':
         return <SandaPage navigate={navigate} />;
+      case 'boxe-chines':
+        return <HomePage navigate={navigate} initialBoxeChinesModal={true} />;
       case 'wushu':
         return <WushuPage navigate={navigate} />;
       case 'dança-do-leão':
