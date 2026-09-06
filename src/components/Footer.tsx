@@ -64,14 +64,25 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
             </h4>
             <ul className="space-y-2 text-xs">
               {MODALITIES_NAV.map((item) => (
-                <li key={item.href}>
-                  <button
-                    onClick={() => handleNav(item.href)}
-                    className="hover:text-amber-400 transition-colors text-left"
-                  >
-                    • {item.name}
-                  </button>
-                </li>
+                <React.Fragment key={item.href}>
+                  <li>
+                    <button
+                      onClick={() => handleNav(item.href)}
+                      className="hover:text-amber-400 transition-colors text-left"
+                    >
+                      • {item.name}
+                    </button>
+                  </li>
+                  {item.name === 'Boxe Chinês' && (
+                    <li
+                      key="footer-item-sanshou"
+                      id="footer-item-sanshou"
+                      className="text-gray-400 select-none cursor-default"
+                    >
+                      • Sanshou
+                    </li>
+                  )}
+                </React.Fragment>
               ))}
             </ul>
           </div>

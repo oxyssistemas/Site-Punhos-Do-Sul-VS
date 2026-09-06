@@ -19,12 +19,12 @@ export const SITE_INFO = {
 };
 
 export const MODALITIES_NAV = [
-  { name: 'Boxe Chinês', href: '/#card-boxe-chines' },
   { name: 'Kung Fu', href: '/kung-fu-1' },
   { name: 'Tai Chi Chuan', href: '/tai-chi-chuan' },
   { name: 'Chi Kung', href: '/chi-kung' },
   { name: 'Defesa Pessoal', href: '/defesa-pessoal' },
   { name: 'Sanda', href: '/sanda' },
+  { name: 'Boxe Chinês', href: '/#card-boxe-chines' },
   { name: 'Wushu', href: '/wushu' },
   { name: 'Dança Do Leão', href: '/dança-do-leão' },
   { name: 'Meditação', href: '/medtação' },
@@ -49,13 +49,6 @@ export const MASTERS_NAV_ITEMS = [
 ];
 
 export const HOME_CARDS: ModalityCard[] = [
-  {
-    id: 'boxe-chines',
-    title: 'Boxe Chinês',
-    description: 'O Boxe Chinês é uma modalidade dinâmica de combate que reúne socos potentes, chutes velozes, defesas atentas e projeções, proporcionando excelente queima calórica, reflexos rápidos e alto condicionamento físico.',
-    href: '#boxe-chines',
-    imagePlaceholder: '/images/modalidades/boxe-chines.jpg',
-  },
   {
     id: 'kung-fu',
     title: 'kung fu',
@@ -90,6 +83,13 @@ export const HOME_CARDS: ModalityCard[] = [
     description: 'Sanda que em mandarim significa "luta livre", também conhecido como sanshou, do mandarim "mãos livres". É a técnica existente nas artes marciais chinesas para...',
     href: '/sanda',
     imagePlaceholder: '/images/modalidades/sanda.jpg',
+  },
+  {
+    id: 'boxe-chines',
+    title: 'Boxe Chinês',
+    description: 'O Boxe Chinês é uma modalidade dinâmica de combate que reúne socos potentes, chutes velozes, defesas atentas e projeções, proporcionando excelente queima calórica, reflexos rápidos e alto condicionamento físico.',
+    href: '#boxe-chines',
+    imagePlaceholder: '/images/modalidades/boxe-chines2.jpg',
   },
   {
     id: 'meditacao',
