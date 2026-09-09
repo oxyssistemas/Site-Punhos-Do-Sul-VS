@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, MessageCircle, Flame, Shield, Activity, Zap, CheckCircle2 } from 'lucide-react';
+import { X, MessageCircle, Flame, Shield, Activity, Zap, CheckCircle2, Divide } from 'lucide-react';
 import { HeroSlider } from '../components/HeroSlider';
 import { BottomCtaBanner } from '../components/BottomCtaBanner';
 import { ContactSection } from '../components/ContactSection';
@@ -11,10 +11,16 @@ import { HOME_CARDS, SITE_INFO } from '../data/siteData';
 interface HomePageProps {
   navigate: (path: string) => void;
   initialBoxeChinesModal?: boolean;
+  initialSanshouModal?: boolean;
 }
 
-export const HomePage: React.FC<HomePageProps> = ({ navigate, initialBoxeChinesModal = false }) => {
+export const HomePage: React.FC<HomePageProps> = ({ 
+  navigate, 
+  initialBoxeChinesModal = false,
+  initialSanshouModal = false,
+}) => {
   const [isBoxeChinesModalOpen, setIsBoxeChinesModalOpen] = useState(initialBoxeChinesModal);
+  const [isSanshouModalOpen, setIsSanshouModalOpen] = useState(initialSanshouModal);
 
   useEffect(() => {
     if (initialBoxeChinesModal) {
@@ -22,12 +28,22 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate, initialBoxeChinesM
     }
   }, [initialBoxeChinesModal]);
 
+  useEffect(() => {
+    if (initialSanshouModal) {
+      setIsSanshouModalOpen(true);
+    }
+  }, [initialSanshouModal]);
+
   const handleCardClick = (target: { id?: string; href: string } | string) => {
     const cardId = typeof target === 'string' ? '' : target.id;
     const href = typeof target === 'string' ? target : target.href;
 
     if (cardId === 'boxe-chines' || href === '#boxe-chines') {
       setIsBoxeChinesModalOpen(true);
+      return;
+    }
+    if (cardId === 'sanshou' || href === '#sanshou'){
+      setIsSanshouModalOpen(true);
       return;
     }
     if (href.startsWith('#') || href.startsWith('/#')) {
@@ -452,6 +468,124 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate, initialBoxeChinesM
                 </button>
               </div>
             </motion.div>
+          </motion.div>
+        )}
+
+        {/* Sanshou Informative Modal */}
+        {isSanshouModalOpen && (
+          <motion.div
+            id="modal-sanshou"
+            initial={{ opacity: 0}}
+            animate={{ opacity: 1}}
+            exit={{ opacity: 0}}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md overflow-y-auto"
+            onClick={() => setIsSanshouModalOpen(false)}
+            >
+          <motion.div
+          initial={{ scale: 0.92, y: 20, opacity: 0}}
+          animate={{ scale: 1, y:0, opacity: 1}}
+          exit={{ scale: 0.92, y: 20, opacity: 0}}
+          transition={{ type: 'spring', damping: 25,stiffness: 300}}
+          className="relative w-full max-w-2x1 bg-neutral-950 border border-red-800/80 rounded-2x1 shadow-2x1 overflow-hidden p-6 sm:p-8 my-auto ring-1 ring-amber-500/30"
+          onClick={(e) => e.stopPropagation()}
+          >
+
+            <div className="absolute top-0 right-0 w-64 h-64 bg-red-900/15 rounded-full blur-3x1 pointer-events-none" />
+
+            {/* Botão Fechar*/}
+            <button
+            id="btn-close-sanshou-modal"
+            onClick={() => setIsSanshouModalOpen(false)}
+            className="absolute top-4 right-4 p-2 rounded-full bg-neutral-900 border border-red-900/60 text-gray-400 hover:text-amber-300 hover:border-amber-400 transition-colors z-20 cursor-pointer"
+            arial-label="Fechar modal"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/60 border-red-800/50 text-amber-400 text-xs front-semibold uppercase tracking-wider mb-3">
+            <Flame className="w-3.5 h-3.5 text-amber-400" />
+            <span>Modalidade Tradicional ° Combate & Mãos Livres</span>
+            </div>
+
+
+            <h2 className="text-2x1 sm:text-3x1 front-bold front-chinese uppercase tracking-wider text-3d-gold">
+              Sanshou
+            </h2>
+            <p className="text-red-400 text-xs sm:text-sm front-semibold tracking-wide uppercase mt-1 mb-4 front-chinese">
+              A Tradição das Mãos Livres, Projeções Rápidas e Eficácia Marcial
+            </p>
+
+
+            <div className="space-y-3 text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
+              <p>
+                O <strong className="text-amber-400 front-semibold">Sanshou</strong> (literalmente <em>"mãos livres"</em> em mandarim) é a expressão clássica do combate corporal nas artes marciais chinesas. Desenvolvido ao longo de séculos como aplicações real de Kung Fu Shaolin, integra socos precisos, chutes potentes e projeções ágeis.
+               </p>
+               <p>
+                Enquanto o Sanda moderno se consolidou no formato esportivo competitivo, o Sanshou preserva as raízes marciais originais: esquivas inteligentes, quebras de equilíbrio, quedas dinâmicas e controle absoluto do confronto.
+               </p>
+            </div>
+
+            {/* 4Pilares*/}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6">
+              <div className="p-3.5 rounded-x1 bg-neutral-900/90 border border-red-900/40 flex items-start gap-3">
+              <div className="p-2 rounded-lg bg-red-950/80 text-amber-400 shrink-0 border border-red-800/40">
+              <Zap className="w-4 h-4" />
+              </div>
+              <div>
+              <h4 className="text-xs sm:text-sm front-bold text-amber-300 uppercase tracking-wide front-chinese">
+                Golpes & Esquivas (Ti & Da)
+              </h4>
+              <p className="text-xs text-gray-400 mt-0.5 leading-snug">
+                Socos contudentes e chutes velozes combinados com deslocamentos estratégicos e esquivas fluidas.
+              </p>
+            </div>
+            </div>
+
+            <div className="p-3.5 rounded-x1 bg-neutral-900/90 border border-red-900/40 flex items-start gap-3">
+            <div className="p-2 rounded-lg bg-red-950/80 text-amber-400 shrink-0 border border-red-800/40">
+            <Shield className="w-4 h-4" />
+            </div>
+            <div>
+            <h4 className="text-xs sm:text-sm front-bold text-amber-300 uppercase tracking-wide front-chinese">
+              Quedas e Projeções ( Shuai Jiao)
+            </h4>
+          <p className="text-xs text-gray-400 mt-0.5 leading-snug">
+            Técnicas Lendárias de projeção rápida (Kuai Jaio) que aproveitam o próprio ímpeto do adversário.
+            </p>  
+            </div>
+            </div>
+
+            <div className="p-3.5 rounded-x1 bg-neutral-900/90 border border-red-900/40 flex items-start gap-3">
+            <div className="p-2 roudend-lg bg-red-950/80 text-amber-400 shrink-0 border border-red-800/40">
+            <Activity className="w-4 h-4" />
+            </div>
+            <div>
+              <h4 className="text-xs sm:text-sm front-bold text-amber-300 uppercase tracking-wide front-chinese">
+                Controle & Defesa (Fang Shou)
+              </h4>
+              <p className="text-xs text-gray-400 mt-0.5 leading-snug">
+                Domínio de distância, bloqueios estruturados e contra-ataques imediatos em curta e média distância.
+              </p>
+            </div>
+            </div>
+
+            <div className="p-3.5 rounded-x1 bg-neutral-900/90 border border-red-900/40 flex items-start gap-3">
+            <div className="p-2 rounded-lg bg-red-950/80 text-amber-400 shrink-0 border border-red-800/40">
+            <Flame className="w-4 h-4" />
+            </div>
+            <div>
+              <h4 className="text-xs sm:text-sm front-bold text-amber-300 uppercase tracking-wide front-chinese">
+                Força, Foco & Tradição
+              </h4>
+              <p className="text-xs text-gray-400 mt-0.5 leading-snug">
+                Desenvolvimento de disciplina marcial, reflexos aguçados e condicionamento físico completo.
+              </p>
+            </div>
+            </div>
+            </div>
+
+          </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

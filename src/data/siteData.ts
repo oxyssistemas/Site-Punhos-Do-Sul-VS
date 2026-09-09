@@ -24,6 +24,7 @@ export const MODALITIES_NAV = [
   { name: 'Chi Kung', href: '/chi-kung' },
   { name: 'Defesa Pessoal', href: '/defesa-pessoal' },
   { name: 'Sanda', href: '/sanda' },
+  { name: 'Sanshou', href: '/sanshou' },
   { name: 'Boxe Chinês', href: '/#card-boxe-chines' },
   { name: 'Wushu', href: '/wushu' },
   { name: 'Dança Do Leão', href: '/dança-do-leão' },
@@ -83,6 +84,13 @@ export const HOME_CARDS: ModalityCard[] = [
     description: 'Sanda que em mandarim significa "luta livre", também conhecido como sanshou, do mandarim "mãos livres". É a técnica existente nas artes marciais chinesas para...',
     href: '/sanda',
     imagePlaceholder: '/images/modalidades/sanda.jpg',
+  },
+  {
+     id: 'sanshou',
+     title: 'Sanshou',
+     description: 'Sanshou (mãos livres) é o combate tradicional das artes marciais chinesas que combina socos rápidos, chutes potentes e projeções ágeis (quedas), desenvolvendo reflexos apurados e máxima eficácia marcial.',
+     href: '#sanshou',
+     imagePlaceholder: '/images/modalidades/sanshou.jpg',
   },
   {
     id: 'boxe-chines',
